@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
-	"strings"
 )
 
 func main() {
@@ -21,24 +20,24 @@ func main() {
 	var aptArgs []string
 
 	switch command {
-	case "install":
-		aptCmd = "apt"
-		aptArgs = append([]string{"install", "-y"}, args...)
-	case "remove":
-		aptCmd = "apt"
-		aptArgs = append([]string{"remove", "-y"}, args...)
-	case "update":
-		aptCmd = "apt"
-		aptArgs = []string{"update"}
-	case "upgrade":
-		aptCmd = "apt"
-		aptArgs = []string{"upgrade", "-y"}
-	case "search":
-		aptCmd = "apt"
-		aptArgs = append([]string{"search"}, args...)
-	default:
-		fmt.Printf("Unknown command: %s\n", command)
-		os.Exit(1)
+		case "install":
+			aptCmd = "apt"
+			aptArgs = append([]string{"install", "-y"}, args...)
+		case "remove":
+			aptCmd = "apt"
+			aptArgs = append([]string{"remove", "-y"}, args...)
+		case "update":
+			aptCmd = "apt"
+			aptArgs = []string{"update"}
+		case "upgrade":
+			aptCmd = "apt"
+			aptArgs = []string{"upgrade", "-y"}
+		case "search":
+			aptCmd = "apt"
+			aptArgs = append([]string{"search"}, args...)
+		default:
+			fmt.Printf("Unknown command: %s\n", command)
+			os.Exit(1)
 	}
 
 	cmd := exec.Command("sudo", append([]string{aptCmd}, aptArgs...)...)
