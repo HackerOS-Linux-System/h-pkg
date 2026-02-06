@@ -1,8 +1,9 @@
 // golang
 // python
+// crystal
 
 > cd source-code
 >>> cd gui && cargo build --release
 >>> cd cli && go get h-pkg && go build
 >>> cd tui && go get h-pkg && go build
->>> cd wrapper && go get h-pkg && go build
+>>> cd wrapper && crystal build src/main.cr --release
