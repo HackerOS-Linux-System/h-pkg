@@ -1,9 +1,0 @@
-name: h-pkg
-version: 0.1
-
-authors:
-  - HackerOS Team <hackeros068@gmail.com>
-
-crystal: 1.10.1
-
-license: MIT
